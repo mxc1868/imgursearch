@@ -1,0 +1,16 @@
+<% var result = data;%>
+    <% result.forEach(function(gallery) {
+        if (gallery.images) { 
+            gallery.images.forEach(function(image) {%>
+            <figure>
+                <a href="<%= image.link %>">
+                    <img src="<%= image.link %>">
+                </a>
+        	    <figcaption><%=image.description%></figcaption>
+    	    </figure>
+    
+    <%
+            });
+        }
+    });%>
+    

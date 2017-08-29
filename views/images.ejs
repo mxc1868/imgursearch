@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <%- include partials/header %>
+    </head>
+    <body>
+        <%- include partials/nav %>
+        <div id="searchResult">
+            <div class="columns">
+            <% if(data) {%>
+               <%-include imagesResult.ejs%> 
+            <% } %>
+            </div>
+        </div>
+        <%- include partials/footer %>
+    </body>
+</html>
