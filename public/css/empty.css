@@ -1,0 +1,13 @@
+.index-btn {
+    margin: 20px 40%;
+    width: 20%;
+    height: 50px;
+}
+
+.index-form {
+    margin-top: 25%;
+}
+
+.index-form .form-control {
+    font-size: 2.5em;
+}

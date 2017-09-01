@@ -1,16 +1,12 @@
-<% var result = data;%>
-    <% result.forEach(function(gallery) {
-        if (gallery.images) { 
-            gallery.images.forEach(function(image) {%>
-            <figure>
-                <a href="<%= image.link %>">
-                    <img src="<%= image.link %>">
+    <% data.forEach(function(img) {%>
+            <div class="grid-item" draggable="false">
+                <a href="<%= img.contentUrl %>" draggable="false">
+                    <img draggable="true" data-src="<%= img.thumbnailUrl %>" width="<%=img.thumbnail.width%>" height="<%=img.thumbnail.height%>">
                 </a>
-        	    <figcaption><%=image.description%></figcaption>
-    	    </figure>
+    	    </div>
     
     <%
-            });
-        }
     });%>
+    <script src="/js/jquery.lazyloadxt.js"></script>
+
     

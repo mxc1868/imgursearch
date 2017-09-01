@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <%- include ../partials/header %>
+        <link rel="stylesheet" href="/css/saved.css">
+    </head>
+    <body draggable="false">
+        <%- include ../partials/nav_trash %>
+        <div class="jumbotron">
+                <h1>My Favorite Pictures</h1>
+        </div>
+        <div draggable="false" id="searchResult" class="container">
+            <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 350 }'>
+                    <% data.forEach(function(img) {%>
+                        <div class="grid-item" draggable="false" id=<%=img._id %>>
+                            <%- img.html %>
+                        </div>
+                    <%
+                    });
+                    %>
+    	    </div>
+    	</div>
+    	<script src="/js/drag_delete.js"></script>
+    	<script src="/js/jquery.lazyloadxt.js"></script>
+        <%- include ../partials/footer %>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+.jumbotron {
+    background: url(https://3.7designs.co/blog/wp-content/themes/37blog-evolution/assets/images/homepage-banner.jpg) center center no-repeat #111315;
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+    color: white;
+}
