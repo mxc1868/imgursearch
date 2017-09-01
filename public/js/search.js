@@ -3,22 +3,27 @@ var page = 2;
 $(document).ready(function(){
     $(this).scrollTop(0);
     $("#search").val(getUrlVars().q);
+    $(".grid").masonry();
 });
 
 $("#search").keyup(function() {
     var input = $("#search").val();
     window.clearTimeout(timer);
     timer = window.setTimeout(function(){
-        $(location).attr('href','/show?q='+$("#search").val());
         $("body").scrollTop(0);
         $.ajax({
             url: "/result/1",
             data: {"q": $("#search").val()},
             success: function(response) {
+                console.log(response);
                 $("#searchResult .grid").html(response);
-            },
+                $(".grid").masonry("destroy");
+                $(".grid").masonry({ "itemSelector": ".grid-item", "columnWidth": 350 });
+            }
         });
-    },500); 
+        
+    },500);
+    
 });
 
 
